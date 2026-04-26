@@ -1,0 +1,7 @@
+creation_rules:
+  - path_regex: secrets/staynest/.*\.yaml
+    kms: arn:aws:kms:us-east-1:111111111111:alias/staynest-sops
+  - path_regex: secrets/staynest/gcp/.*\.yaml
+    gcp_kms: projects/staynest-prod/locations/global/keyRings/staynest/cryptoKeys/sops
+  - path_regex: secrets/staynest/azure/.*\.yaml
+    azure_keyvault: https://staynest-kv.vault.azure.net/keys/sops/abc123

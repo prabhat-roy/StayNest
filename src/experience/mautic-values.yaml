@@ -1,0 +1,6 @@
+# Mautic — guest-marketing automation
+image: { repository: mautic/mautic, tag: 5-apache }
+mariadb: { enabled: true }
+ingress:
+  enabled: true
+  hosts: [{ host: mautic.staynest.internal }]

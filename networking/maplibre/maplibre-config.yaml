@@ -1,0 +1,8 @@
+# MapLibre GL — open-source maps (no Mapbox-API dependency) for property maps
+style: maplibre://styles/staynest/positron
+sources:
+  osm:
+    type: vector
+    tiles: ["https://tiles.staynest.internal/{z}/{x}/{y}.pbf"]
+sprites: { default: "https://maps.staynest.internal/sprites/sprite" }
+glyphs:  "https://maps.staynest.internal/fonts/{fontstack}/{range}.pbf"

@@ -1,0 +1,10 @@
+clusterName: staynest.teleport.internal
+authentication:
+  type: github
+  githubConnector:
+    name: github
+    redirectUrl: https://teleport.staynest.internal/v1/webapi/github/callback
+kubeClusterName: staynest-prod
+ingress:
+  enabled: true
+  hostname: teleport.staynest.internal
