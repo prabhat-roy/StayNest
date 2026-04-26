@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: file-upload-service
+  namespace: staynest
+  labels: { app.kubernetes.io/name: file-upload-service, staynest.io/domain: platform }
+data:
+  LOG_LEVEL: info
+  PORT: "51011"

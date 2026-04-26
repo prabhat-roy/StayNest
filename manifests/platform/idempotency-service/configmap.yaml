@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: idempotency-service
+  namespace: staynest
+  labels: { app.kubernetes.io/name: idempotency-service, staynest.io/domain: platform }
+data:
+  LOG_LEVEL: info
+  PORT: "51000"
