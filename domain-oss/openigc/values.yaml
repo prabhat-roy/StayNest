@@ -1,0 +1,2 @@
+﻿# OpenIGC — carbon-per-stay accounting (Hospitality Carbon Measurement Initiative)
+openigc: { factors: { electricity: country-grid, gas: defra, water: defra }, scope: [1, 2, 3] }

@@ -1,0 +1,9 @@
+﻿{
+  "defaults": { "standard": "WCAG2AA", "timeout": 30000, "concurrency": 4, "chromeLaunchConfig": { "args": ["--no-sandbox"] } },
+  "urls": [
+    "https://www.staynest.internal/",
+    "https://www.staynest.internal/about",
+    "https://app.staynest.internal/login",
+    "https://app.staynest.internal/dashboard"
+  ]
+}

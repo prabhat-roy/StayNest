@@ -1,0 +1,7 @@
+﻿{
+  "server": "https://wpt.staynest.internal",
+  "tests": [
+    { "url": "https://www.staynest.internal/", "location": "Dulles:Chrome", "runs": 3, "connectivity": "4G" },
+    { "url": "https://app.staynest.internal/", "location": "Mumbai:Chrome", "runs": 3, "connectivity": "Cable" }
+  ]
+}
