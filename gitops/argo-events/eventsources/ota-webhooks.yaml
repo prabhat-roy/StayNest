@@ -1,0 +1,22 @@
+# OTA webhook event source - Booking.com / Expedia / Airbnb push booking notifications
+apiVersion: argoproj.io/v1alpha1
+kind: EventSource
+metadata: { name: ota-webhooks, namespace: argo-events }
+spec:
+  service: { ports: [{ port: 12010, targetPort: 12010 }] }
+  webhook:
+    booking:
+      endpoint: /ota/booking
+      port: '12010'
+      method: POST
+      url: https://argo-events.staynest.internal
+    expedia:
+      endpoint: /ota/expedia
+      port: '12010'
+      method: POST
+      url: https://argo-events.staynest.internal
+    airbnb:
+      endpoint: /ota/airbnb
+      port: '12010'
+      method: POST
+      url: https://argo-events.staynest.internal

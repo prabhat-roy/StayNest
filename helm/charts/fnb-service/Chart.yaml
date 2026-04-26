@@ -1,0 +1,6 @@
+apiVersion: v2
+name: fnb-service
+description: F&B service - HTNG PMS-POS bridge for kitchen, restaurant
+type: application
+version: 0.1.0
+appVersion: "0.1.0"

@@ -1,0 +1,6 @@
+cloud: { provider: aws, storageClass: gp3, ingressClass: alb }
+serviceAccount:
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::{{ .Values.aws.accountId }}:role/staynest-guest-bff
+envFrom:
+  - secretRef: { name: guest-bff-aws-secrets }

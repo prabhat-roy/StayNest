@@ -1,0 +1,12 @@
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata: { name: staynest-cross-domain-bff-only, namespace: staynest }
+spec:
+  endpointSelector: { matchLabels: { app.kubernetes.io/part-of: staynest } }
+  ingress:
+    - fromEndpoints:
+        - matchLabels: { app.kubernetes.io/name: api-gateway }
+        - matchLabels: { app.kubernetes.io/name: guest-bff }
+        - matchLabels: { app.kubernetes.io/name: staff-bff }
+        - matchLabels: { app.kubernetes.io/name: revenue-bff }
+        - matchLabels: { app.kubernetes.io/name: graphql-gateway }

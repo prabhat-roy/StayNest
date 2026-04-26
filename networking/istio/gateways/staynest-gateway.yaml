@@ -1,0 +1,9 @@
+apiVersion: networking.istio.io/v1
+kind: Gateway
+metadata: { name: staynest, namespace: istio-system }
+spec:
+  selector: { istio: ingressgateway }
+  servers:
+    - port: { number: 443, name: https, protocol: HTTPS }
+      tls:  { mode: SIMPLE, credentialName: staynest-tls }
+      hosts: ["book.staynest.com","desk.staynest.com","revenue.staynest.com","api.staynest.com"]

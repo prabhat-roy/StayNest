@@ -1,0 +1,6 @@
+apiVersion: v2
+name: guest-bff
+description: BFF for guest portal (Next.js) - bookings, profile, loyalty
+type: application
+version: 0.1.0
+appVersion: "0.1.0"

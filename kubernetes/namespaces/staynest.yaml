@@ -1,0 +1,137 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: staynest-platform
+  labels:
+    staynest.io/domain: platform
+    pod-security.kubernetes.io/enforce: restricted
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: staynest-pms
+  labels:
+    staynest.io/domain: pms
+    pod-security.kubernetes.io/enforce: restricted
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: staynest-crs
+  labels:
+    staynest.io/domain: crs
+    pod-security.kubernetes.io/enforce: restricted
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: staynest-rms
+  labels:
+    staynest.io/domain: rms
+    pod-security.kubernetes.io/enforce: restricted
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: staynest-channel-manager
+  labels:
+    staynest.io/domain: channel-manager
+    pod-security.kubernetes.io/enforce: restricted
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: staynest-guest
+  labels:
+    staynest.io/domain: guest
+    pod-security.kubernetes.io/enforce: restricted
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: staynest-housekeeping
+  labels:
+    staynest.io/domain: housekeeping
+    pod-security.kubernetes.io/enforce: restricted
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: staynest-fnb
+  labels:
+    staynest.io/domain: fnb
+    pod-security.kubernetes.io/enforce: restricted
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: staynest-spa
+  labels:
+    staynest.io/domain: spa
+    pod-security.kubernetes.io/enforce: restricted
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: staynest-event
+  labels:
+    staynest.io/domain: event
+    pod-security.kubernetes.io/enforce: restricted
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: staynest-loyalty
+  labels:
+    staynest.io/domain: loyalty
+    pod-security.kubernetes.io/enforce: restricted
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: staynest-finance
+  labels:
+    staynest.io/domain: finance
+    staynest.io/pci-dss-scope: "tokenised"
+    pod-security.kubernetes.io/enforce: restricted
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: staynest-procurement
+  labels:
+    staynest.io/domain: procurement
+    pod-security.kubernetes.io/enforce: restricted
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: staynest-staff
+  labels:
+    staynest.io/domain: staff
+    pod-security.kubernetes.io/enforce: restricted
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: staynest-maintenance
+  labels:
+    staynest.io/domain: maintenance
+    pod-security.kubernetes.io/enforce: restricted
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: staynest-analytics
+  labels:
+    staynest.io/domain: analytics
+    pod-security.kubernetes.io/enforce: restricted
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: staynest-identity
+  labels:
+    staynest.io/domain: identity
+    pod-security.kubernetes.io/enforce: restricted

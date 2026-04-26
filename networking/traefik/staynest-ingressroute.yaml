@@ -1,0 +1,11 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata: { name: staynest, namespace: staynest }
+spec:
+  entryPoints: [websecure]
+  routes:
+    - match: Host(`api.staynest.com`)
+      kind: Rule
+      services: [{ name: api-gateway, port: 50000 }]
+      middlewares: [{ name: staynest-rate-limit }, { name: staynest-headers }]
+  tls: { secretName: staynest-tls }

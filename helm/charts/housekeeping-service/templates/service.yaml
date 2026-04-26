@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "housekeeping-service.fullname" . }}
+  labels: {{- include "housekeeping-service.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports: [{ port: {{ .Values.service.port }}, targetPort: http, protocol: TCP, name: http }]
+  selector: {{- include "housekeeping-service.selectorLabels" . | nindent 4 }}

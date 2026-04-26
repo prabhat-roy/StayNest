@@ -1,6 +1,9 @@
 # Networking — StayNest
 
-Service mesh + edge — Istio, Linkerd, Cilium, Traefik, Kong, Consul, NGINX.
-
-> Skeleton placeholder. Content will be added as the project takes shape.
-> See [../README.md](../README.md) for the StayNest project overview.
+| Layer | Tool | Role |
+|---|---|---|
+| Edge   | Cloudflare + Traefik | Global CDN + WAF + TLS termination |
+| Mesh   | Istio                | mTLS STRICT, AuthorizationPolicy default-deny, retries |
+| CNI    | Cilium               | eBPF L3/L4, cross-domain BFF-only ingress |
+| API GW | Kong                 | OTA partner JWT/OIDC plugin layer |
+| Linkerd | Linkerd             | Failover mesh option (not active by default) |

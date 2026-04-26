@@ -1,0 +1,3 @@
+cloud: { provider: aws, storageClass: gp3, ingressClass: alb }
+serviceAccount: { annotations: { eks.amazonaws.com/role-arn: "arn:aws:iam::{{ .Values.aws.accountId }}:role/staynest-guest-service" } }
+envFrom: [{ secretRef: { name: guest-service-aws-secrets } }]

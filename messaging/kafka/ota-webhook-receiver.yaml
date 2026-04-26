@@ -1,0 +1,27 @@
+# OTA webhook receiver - HTTP edge that receives Booking.com/Expedia/Airbnb
+# webhooks and fans them to channel-manager-ota-booking-incoming Kafka topic.
+apiVersion: apps/v1
+kind: Deployment
+metadata: { name: ota-webhook-receiver, namespace: staynest }
+spec:
+  replicas: 3
+  selector: { matchLabels: { app.kubernetes.io/name: ota-webhook-receiver } }
+  template:
+    metadata:
+      labels: { app.kubernetes.io/name: ota-webhook-receiver, staynest.io/domain: channel-manager }
+    spec:
+      containers:
+        - name: receiver
+          image: harbor.staynest.internal/staynest/ota-webhook-receiver:latest
+          ports: [{ containerPort: 8080, name: http }]
+          env:
+            - { name: KAFKA_BOOTSTRAP, value: "staynest-kafka-bootstrap.kafka:9093" }
+            - { name: KAFKA_TOPIC,     value: "channel-manager-ota-booking-incoming" }
+            - { name: WEBHOOK_HMAC_VERIFICATION, value: "strict" }
+---
+apiVersion: v1
+kind: Service
+metadata: { name: ota-webhook-receiver, namespace: staynest }
+spec:
+  ports: [{ port: 80, targetPort: http, name: http }]
+  selector: { app.kubernetes.io/name: ota-webhook-receiver }

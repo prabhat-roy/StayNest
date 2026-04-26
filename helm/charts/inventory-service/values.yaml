@@ -1,0 +1,23 @@
+image: { repository: staynest/inventory-service, tag: "", pullPolicy: IfNotPresent }
+replicaCount: 5  # Higher replica count for booking spike handling
+service: { type: ClusterIP, port: 50504, targetPort: 50504 }
+resources: { requests: { cpu: 200m, memory: 64Mi }, limits: { cpu: 2000m, memory: 256Mi } }
+probes:
+  liveness:  { httpGet: { path: /healthz, port: 50504 }, initialDelaySeconds: 5,  periodSeconds: 10 }
+  readiness: { httpGet: { path: /healthz, port: 50504 }, initialDelaySeconds: 2,  periodSeconds: 5 }
+serviceAccount: { create: true, annotations: {} }
+podLabels:
+  app.kubernetes.io/name: inventory-service
+  app.kubernetes.io/part-of: staynest
+  staynest.io/domain: channel-manager
+  staynest.io/atomic-inventory: "true"
+podAnnotations: {}
+securityContext: { runAsNonRoot: true, runAsUser: 1000, fsGroup: 1000, seccompProfile: { type: RuntimeDefault } }
+containerSecurityContext: { allowPrivilegeEscalation: false, readOnlyRootFilesystem: true, capabilities: { drop: ["ALL"] } }
+env: []
+envFrom: []
+config:
+  LOG_LEVEL: info
+  REDIS_REDLOCK_TIMEOUT_MS: "1000"
+  REDIS_REDLOCK_NODES: "redis-0:6379,redis-1:6379,redis-2:6379"
+cloud: { provider: "", storageClass: "", ingressClass: "" }

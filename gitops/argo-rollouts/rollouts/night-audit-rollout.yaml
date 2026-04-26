@@ -1,0 +1,25 @@
+# Night audit uses BLUE-GREEN per CLAUDE.md - no canary slicing during audit window
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata: { name: night-audit, namespace: staynest }
+spec:
+  replicas: 2
+  strategy:
+    blueGreen:
+      activeService: night-audit-active
+      previewService: night-audit-preview
+      autoPromotionEnabled: false
+      scaleDownDelaySeconds: 600
+      prePromotionAnalysis:
+        templates: [{ templateName: staynest-canary-analysis }]
+        args: [{ name: service-name, value: night-audit }]
+  selector:
+    matchLabels: { app.kubernetes.io/name: night-audit }
+  template:
+    metadata:
+      labels: { app.kubernetes.io/name: night-audit }
+    spec:
+      containers:
+        - name: night-audit
+          image: harbor.staynest.internal/staynest/night-audit:latest
+          ports: [{ containerPort: 50204 }]

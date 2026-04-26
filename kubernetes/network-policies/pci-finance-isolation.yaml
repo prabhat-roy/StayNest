@@ -1,0 +1,16 @@
+# PCI-DSS scope isolation - finance namespace can only be reached from api-gateway
+# and only payment-tokenisation paths can reach the payment processor
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata: { name: pci-finance-strict, namespace: staynest-finance }
+spec:
+  podSelector:
+    matchLabels: { staynest.io/pci-scope: tokenised }
+  policyTypes: [Ingress, Egress]
+  ingress:
+    - from:
+        - namespaceSelector: { matchLabels: { staynest.io/domain: platform } }
+          podSelector:       { matchLabels: { app.kubernetes.io/name: api-gateway } }
+  egress:
+    # Only outbound to payment gateway endpoints (tokenisation only - no raw PAN)
+    - to: [{ namespaceSelector: { matchLabels: { staynest.io/payment-gateway: "true" } } }]

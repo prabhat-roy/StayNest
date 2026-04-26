@@ -1,6 +1,6 @@
-# Gitops — StayNest
+# GitOps — StayNest
 
-ArgoCD App-of-Apps, Flux HelmReleases, Argo Rollouts, Argo Workflows, Argo Events.
-
-> Skeleton placeholder. Content will be added as the project takes shape.
-> See [../README.md](../README.md) for the StayNest project overview.
+Per-cloud ArgoCD instances reconcile Helm charts from this repo. App-of-Apps
+pattern with one ApplicationSet generating one Application per service per cloud.
+Argo Rollouts handle canary for guest-facing services and blue-green for night
+audit + rate publishing (per CLAUDE.md).

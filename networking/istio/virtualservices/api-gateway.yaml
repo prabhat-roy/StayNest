@@ -1,0 +1,11 @@
+apiVersion: networking.istio.io/v1
+kind: VirtualService
+metadata: { name: api-gateway, namespace: staynest }
+spec:
+  hosts: [api.staynest.com]
+  gateways: [istio-system/staynest]
+  http:
+    - route:
+        - destination: { host: api-gateway, port: { number: 50000 } }
+      retries: { attempts: 3, perTryTimeout: 2s, retryOn: 5xx }
+      timeout: 30s

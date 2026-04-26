@@ -1,0 +1,9 @@
+apiVersion: velero.io/v1
+kind: Schedule
+metadata: { name: staynest-daily, namespace: velero }
+spec:
+  schedule: "0 2 * * *"
+  template:
+    includedNamespaces: [staynest, staynest-finance, staynest-pms, staynest-crs]
+    snapshotVolumes: true
+    ttl: 720h0m0s

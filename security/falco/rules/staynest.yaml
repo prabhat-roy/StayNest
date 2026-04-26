@@ -1,0 +1,29 @@
+- rule: Unexpected outbound from staynest-finance
+  desc: Detects unexpected egress from PCI-scoped finance namespace.
+  condition: >
+    evt.type=connect and evt.dir=< and
+    container and k8s_ns_name="staynest-finance" and
+    not fd.sip in (allowed_payment_egress)
+  output: "PCI VIOLATION: unexpected egress from %container.name to %fd.sip:%fd.sport"
+  priority: CRITICAL
+  tags: [pci, finance, staynest]
+
+- rule: Raw guest PII access without consent
+  desc: Service queried guest profile vault without consent context.
+  condition: >
+    fd.name endswith "/v1/guests" and not k8s.pod.label.staynest.io/consent-aware="true"
+  output: "Raw guest lookup without consent token: %container.name"
+  priority: WARNING
+  tags: [pii, gdpr, staynest]
+
+- rule: Inventory write outside inventory-service
+  desc: Detects DB write to room_inventory not from inventory-service.
+  condition: >
+    proc.name="psql" and proc.cmdline contains "room_inventory"
+    and not k8s.pod.label.app.kubernetes.io/name="inventory-service"
+  output: "OVERBOOKING RISK: %container.name attempted direct write to room_inventory"
+  priority: CRITICAL
+  tags: [overbooking, staynest]
+
+- list: allowed_payment_egress
+  items: ["adyen.com","stripe.com","braintreepayments.com","worldpay.com"]

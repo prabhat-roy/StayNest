@@ -1,0 +1,33 @@
+groups:
+  - name: staynest-hospitality
+    rules:
+      - alert: RateParityBreach
+        expr: increase(staynest_rate_parity_violation_total[5m]) > 0
+        labels: { severity: warning, team: channel-manager }
+        annotations:
+          summary: "Rate parity violation detected"
+          description: "Own rate vs OTA rate diverged - revenue manager must investigate"
+
+      - alert: OverbookingAttemptDenied
+        expr: increase(staynest_inventory_overbooking_blocked_total[5m]) > 0
+        labels: { severity: critical, team: channel-manager }
+        annotations:
+          summary: "Overbooking attempt blocked by inventory-service"
+          description: "Redlock prevented overbook - investigate channel manager sync lag"
+
+      - alert: OTASyncLag
+        expr: kafka_consumergroup_lag{topic=~"channel-manager.*"} > 500
+        for: 5m
+        labels: { severity: warning, team: channel-manager }
+        annotations: { summary: "OTA sync consumer lag >500 messages" }
+
+      - alert: PaymentTokenisationFailure
+        expr: increase(staynest_payment_tokenisation_failed_total[5m]) > 5
+        labels: { severity: critical, team: finance }
+        annotations:
+          summary: "Payment gateway tokenisation failures spiking - bookings may fail"
+
+      - alert: NightAuditLag
+        expr: time() - staynest_night_audit_last_success_timestamp_seconds > 86400
+        labels: { severity: critical, team: pms }
+        annotations: { summary: "Night audit hasn't run successfully in >24h" }

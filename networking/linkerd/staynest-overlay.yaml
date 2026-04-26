@@ -1,0 +1,2 @@
+identity: { trustDomain: staynest.internal }
+proxyInjector: { ignoreInboundPorts: ["4191"] }

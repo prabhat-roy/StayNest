@@ -1,0 +1,15 @@
+# Auto-scale OTA connectors based on Kafka consumer lag - booking spikes
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata: { name: ota-connector, namespace: staynest }
+spec:
+  scaleTargetRef: { name: ota-connector }
+  minReplicaCount: 2
+  maxReplicaCount: 50
+  triggers:
+    - type: kafka
+      metadata:
+        bootstrapServers: kafka.messaging:9092
+        consumerGroup: ota-connector
+        topic: channel-manager.ota.booking-incoming
+        lagThreshold: "100"

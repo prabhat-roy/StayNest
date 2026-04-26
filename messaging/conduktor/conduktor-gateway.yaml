@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata: { name: conduktor-config, namespace: kafka }
+data:
+  config.yaml: |
+    interceptors:
+      - name: schema-validation
+        config: { allowedNamespaces: ["com.staynest.*"] }
+      - name: pii-mask
+        config: { fields: [guest_email, guest_phone, passport_no, national_id] }
+      - name: pci-block
+        config: { fields: [card_pan, card_cvv]  action: reject }
+      - name: rate-limit
+        config:
+          perPrincipal: { producer: 10000, consumer: 50000 }

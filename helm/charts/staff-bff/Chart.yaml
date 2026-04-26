@@ -1,0 +1,6 @@
+apiVersion: v2
+name: staff-bff
+description: BFF for front-desk (React) and staff mobile (Flutter)
+type: application
+version: 0.1.0
+appVersion: "0.1.0"

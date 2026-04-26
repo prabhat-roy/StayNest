@@ -1,0 +1,81 @@
+---
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaTopic
+metadata:
+  name: crs-booking-confirmed
+  namespace: kafka
+  labels: { strimzi.io/cluster: staynest-kafka }
+spec:
+  partitions: 24
+  replicas: 3
+  config:
+    retention.ms: 2592000000
+    compression.type: zstd
+---
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaTopic
+metadata:
+  name: pms-room-checked-out
+  namespace: kafka
+  labels: { strimzi.io/cluster: staynest-kafka }
+spec:
+  partitions: 12
+  replicas: 3
+  config:
+    retention.ms: 604800000
+    compression.type: zstd
+---
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaTopic
+metadata:
+  name: rms-rate-changed
+  namespace: kafka
+  labels: { strimzi.io/cluster: staynest-kafka }
+spec:
+  partitions: 12
+  replicas: 3
+  config:
+    retention.ms: 2592000000
+    compression.type: zstd
+---
+# OTA inbound webhook events fanned to internal topics
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaTopic
+metadata:
+  name: channel-manager-ota-booking-incoming
+  namespace: kafka
+  labels: { strimzi.io/cluster: staynest-kafka }
+spec:
+  partitions: 24
+  replicas: 3
+  config:
+    retention.ms: 2592000000
+    compression.type: zstd
+---
+# Inventory updates (Redlock-protected) - higher partition count for booking spikes
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaTopic
+metadata:
+  name: channel-manager-inventory-changed
+  namespace: kafka
+  labels: { strimzi.io/cluster: staynest-kafka }
+spec:
+  partitions: 48
+  replicas: 3
+  config:
+    retention.ms: 604800000
+    compression.type: zstd
+    min.insync.replicas: 2
+---
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaTopic
+metadata:
+  name: finance-payment-completed
+  namespace: kafka
+  labels: { strimzi.io/cluster: staynest-kafka }
+spec:
+  partitions: 12
+  replicas: 3
+  config:
+    retention.ms: 220752000000  # 7 years for finance audit
+    compression.type: zstd

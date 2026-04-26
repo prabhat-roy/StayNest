@@ -1,0 +1,6 @@
+cloud: { provider: gcp, storageClass: pd-balanced, ingressClass: gce }
+serviceAccount:
+  annotations:
+    iam.gke.io/gcp-service-account: staynest-guest-bff@{{ .Values.gcp.project }}.iam.gserviceaccount.com
+envFrom:
+  - secretRef: { name: guest-bff-gcp-secrets }

@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: staynest
+  namespace: argocd
+spec:
+  description: StayNest hospitality platform applications
+  sourceRepos:
+    - https://github.com/prabhat-roy/StayNest.git
+  destinations:
+    - { namespace: staynest, server: https://kubernetes.default.svc }
+    - { namespace: staynest-*, server: https://kubernetes.default.svc }
+  clusterResourceWhitelist:
+    - { group: '*', kind: '*' }
+  namespaceResourceWhitelist:
+    - { group: '*', kind: '*' }

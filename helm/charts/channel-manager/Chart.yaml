@@ -1,0 +1,6 @@
+apiVersion: v2
+name: channel-manager
+description: OTA channel manager - rate parity, inventory sync (Booking/Expedia/Airbnb)
+type: application
+version: 0.1.0
+appVersion: "0.1.0"

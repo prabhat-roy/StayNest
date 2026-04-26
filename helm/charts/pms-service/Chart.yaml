@@ -1,0 +1,6 @@
+apiVersion: v2
+name: pms-service
+description: PMS core (rooms, stays, check-in/out, night audit) - Java/Spring
+type: application
+version: 0.1.0
+appVersion: "0.1.0"

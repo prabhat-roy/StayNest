@@ -1,0 +1,3 @@
+cloud: { provider: aws, storageClass: gp3, ingressClass: alb }
+serviceAccount: { annotations: { eks.amazonaws.com/role-arn: "arn:aws:iam::{{ .Values.aws.accountId }}:role/staynest-payment-service" } }
+envFrom: [{ secretRef: { name: payment-service-aws-secrets } }]

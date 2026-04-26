@@ -1,0 +1,28 @@
+# Atomic inventory locking - critical service for overbooking prevention
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: inventory-service
+  namespace: staynest
+  labels:
+    app.kubernetes.io/name: inventory-service
+    app.kubernetes.io/part-of: staynest
+    staynest.io/domain: channel-manager
+    staynest.io/atomic-inventory: "true"
+spec:
+  replicas: 5
+  selector: { matchLabels: { app.kubernetes.io/name: inventory-service } }
+  template:
+    metadata:
+      labels: { app.kubernetes.io/name: inventory-service }
+    spec:
+      serviceAccountName: inventory-service
+      containers:
+        - name: inventory-service
+          image: harbor.staynest.internal/staynest/inventory-service:latest
+          ports: [{ containerPort: 50504, name: http }]
+          env:
+            - { name: REDIS_REDLOCK_TIMEOUT_MS, value: "1000" }
+            - { name: REDIS_REDLOCK_NODES, value: "redis-0:6379,redis-1:6379,redis-2:6379" }
+          livenessProbe:  { httpGet: { path: /healthz, port: 50504 } }
+          readinessProbe: { httpGet: { path: /healthz, port: 50504 } }

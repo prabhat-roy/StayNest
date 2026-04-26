@@ -1,0 +1,25 @@
+# Rate publishing uses BLUE-GREEN per CLAUDE.md - rate parity violations across canary slices unacceptable
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata: { name: rate-service, namespace: staynest }
+spec:
+  replicas: 3
+  strategy:
+    blueGreen:
+      activeService: rate-service-active
+      previewService: rate-service-preview
+      autoPromotionEnabled: false
+      scaleDownDelaySeconds: 600
+      prePromotionAnalysis:
+        templates: [{ templateName: staynest-canary-analysis }]
+        args: [{ name: service-name, value: rate-service }]
+  selector:
+    matchLabels: { app.kubernetes.io/name: rate-service }
+  template:
+    metadata:
+      labels: { app.kubernetes.io/name: rate-service }
+    spec:
+      containers:
+        - name: rate-service
+          image: harbor.staynest.internal/staynest/rate-service:latest
+          ports: [{ containerPort: 50202 }]

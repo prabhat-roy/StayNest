@@ -1,0 +1,16 @@
+image: { repository: staynest/channel-manager, tag: "", pullPolicy: IfNotPresent }
+replicaCount: 3
+service: { type: ClusterIP, port: 50500, targetPort: 50500 }
+resources: { requests: { cpu: 200m, memory: 256Mi }, limits: { cpu: 2000m, memory: 1Gi } }
+probes:
+  liveness:  { httpGet: { path: /healthz, port: 50500 }, initialDelaySeconds: 20, periodSeconds: 20 }
+  readiness: { httpGet: { path: /healthz, port: 50500 }, initialDelaySeconds: 5,  periodSeconds: 10 }
+serviceAccount: { create: true, annotations: {} }
+podLabels: { app.kubernetes.io/name: channel-manager, app.kubernetes.io/part-of: staynest, staynest.io/domain: channel-manager }
+podAnnotations: {}
+securityContext: { runAsNonRoot: true, runAsUser: 1000, fsGroup: 1000, seccompProfile: { type: RuntimeDefault } }
+containerSecurityContext: { allowPrivilegeEscalation: false, readOnlyRootFilesystem: true, capabilities: { drop: ["ALL"] } }
+env: []
+envFrom: []
+config: { LOG_LEVEL: info, RATE_PARITY_INTERVAL_SEC: "300" }
+cloud: { provider: "", storageClass: "", ingressClass: "" }

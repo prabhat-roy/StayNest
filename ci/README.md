@@ -1,6 +1,17 @@
-# Ci — StayNest
+# CI Pipelines — StayNest
 
-CI/CD pipelines across multiple platforms (Jenkins, GitHub Actions, GitLab CI, Tekton, Drone, etc.).
+Pipelines parameterised by **CLOUD** (aws | gcp | azure) so a single pipeline
+config can deploy to any of the three clouds.
 
-> Skeleton placeholder. Content will be added as the project takes shape.
-> See [../README.md](../README.md) for the StayNest project overview.
+| Platform | Path | Purpose |
+|---|---|---|
+| Jenkins | `ci/jenkins/` | Primary CI — build, scan, sign, push |
+| GitHub Actions | `ci/github-actions/` | PR validation (lint, SAST, secrets, OpenSSF Scorecard). Stored here (not `.github/`) to keep auto-trigger off. |
+| GitLab CI | `ci/gitlab-ci/` | Container supply chain — Kaniko + SBOM + Cosign + Harbor + Clair |
+| Tekton | `ci/tekton/` | In-cluster K8s tasks (DB migrations, Helm deploys) |
+
+All pipelines accept `CLOUD={aws|gcp|azure}` and apply the matching Helm overlay
+from `helm/charts/<svc>/values-<cloud>.yaml`.
+
+## Deployment strategy
+Per CLAUDE.md: default to **canary**; PMS night audit and rate publishing use **blue-green**.

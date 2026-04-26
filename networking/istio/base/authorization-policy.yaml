@@ -1,0 +1,19 @@
+apiVersion: security.istio.io/v1
+kind: AuthorizationPolicy
+metadata: { name: staynest-default-deny, namespace: staynest }
+spec: { action: DENY, rules: [{}] }
+---
+apiVersion: security.istio.io/v1
+kind: AuthorizationPolicy
+metadata: { name: allow-from-platform, namespace: staynest }
+spec:
+  action: ALLOW
+  rules:
+    - from:
+        - source:
+            principals:
+              - cluster.local/ns/staynest/sa/api-gateway
+              - cluster.local/ns/staynest/sa/guest-bff
+              - cluster.local/ns/staynest/sa/staff-bff
+              - cluster.local/ns/staynest/sa/revenue-bff
+              - cluster.local/ns/staynest/sa/graphql-gateway

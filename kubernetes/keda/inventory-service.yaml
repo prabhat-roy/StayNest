@@ -1,0 +1,15 @@
+# Auto-scale inventory-service (Rust + Redlock) based on booking request rate
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata: { name: inventory-service, namespace: staynest }
+spec:
+  scaleTargetRef: { name: inventory-service }
+  minReplicaCount: 5
+  maxReplicaCount: 100
+  triggers:
+    - type: prometheus
+      metadata:
+        serverAddress: http://prometheus.observability:9090
+        metricName: staynest_inventory_lock_request_rate
+        threshold: "1000"
+        query: sum(rate(staynest_inventory_lock_acquired_total[1m]))

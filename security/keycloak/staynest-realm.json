@@ -1,0 +1,35 @@
+{
+  "realm": "staynest",
+  "enabled": true,
+  "sslRequired": "external",
+  "registrationAllowed": true,
+  "loginWithEmailAllowed": true,
+  "rememberMe": true,
+  "verifyEmail": true,
+  "resetPasswordAllowed": true,
+  "bruteForceProtected": true,
+  "passwordPolicy": "length(12) and specialChars(1) and upperCase(1) and digits(1) and notUsername and passwordHistory(5)",
+  "otpPolicyType": "totp",
+  "otpPolicyAlgorithm": "HmacSHA256",
+  "otpPolicyDigits": 6,
+  "webAuthnPolicyRpEntityName": "StayNest",
+  "clients": [
+    { "clientId": "guest-portal",   "publicClient": true,  "redirectUris": ["https://book.staynest.com/*"] },
+    { "clientId": "front-desk",     "publicClient": false, "redirectUris": ["https://desk.staynest.com/*"] },
+    { "clientId": "revenue-portal", "publicClient": false, "redirectUris": ["https://revenue.staynest.com/*"] },
+    { "clientId": "staff-mobile",   "publicClient": true }
+  ],
+  "roles": {
+    "realm": [
+      { "name": "guest" },
+      { "name": "front-desk-staff" },
+      { "name": "housekeeping-staff" },
+      { "name": "fnb-staff" },
+      { "name": "spa-therapist" },
+      { "name": "revenue-manager" },
+      { "name": "property-manager" },
+      { "name": "regional-manager" },
+      { "name": "system-admin" }
+    ]
+  }
+}
