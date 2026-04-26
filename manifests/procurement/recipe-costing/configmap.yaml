@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: recipe-costing
+  namespace: staynest
+  labels: { app.kubernetes.io/name: recipe-costing, staynest.io/domain: procurement }
+data:
+  LOG_LEVEL: info
+  PORT: "50262"

@@ -1,0 +1,20 @@
+# preventive-service
+
+Service in the **maintenance** domain of StayNest.
+
+**Language:** Go · **Port:** 50302
+
+## Run locally
+
+```bash
+make run
+```
+
+## Endpoints
+
+- `GET /healthz` — health check, returns `{ "status": "ok" }`
+
+## See also
+
+- [helm/charts/preventive-service/](../../../helm/charts/preventive-service/) — Helm chart
+- [manifests/maintenance/preventive-service/](../../../manifests/maintenance/preventive-service/) — Raw K8s manifests

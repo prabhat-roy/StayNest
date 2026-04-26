@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: energy-service
+  namespace: staynest
+  labels:
+    app.kubernetes.io/name: energy-service
+    app.kubernetes.io/part-of: staynest
+    staynest.io/domain: maintenance
+spec:
+  replicas: 2
+  selector: { matchLabels: { app.kubernetes.io/name: energy-service } }
+  template:
+    metadata:
+      labels: { app.kubernetes.io/name: energy-service, staynest.io/domain: maintenance }
+    spec:
+      serviceAccountName: energy-service
+      securityContext: { runAsNonRoot: true, runAsUser: 1000, fsGroup: 1000 }
+      containers:
+        - name: energy-service
+          image: harbor.staynest.internal/staynest/energy-service:latest
+          ports: [{ containerPort: 50303, name: http }]
+          envFrom: [{ configMapRef: { name: energy-service } }]
+          livenessProbe:  { httpGet: { path: /healthz, port: 50303 }, initialDelaySeconds: 15 }
+          readinessProbe: { httpGet: { path: /healthz, port: 50303 }, initialDelaySeconds: 5 }
+          resources:
+            requests: { cpu: 100m, memory: 128Mi }
+            limits:   { cpu: 1000m, memory: 512Mi }
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities: { drop: ["ALL"] }

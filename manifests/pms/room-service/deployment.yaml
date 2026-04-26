@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: room-service
+  namespace: staynest
+  labels:
+    app.kubernetes.io/name: room-service
+    app.kubernetes.io/part-of: staynest
+    staynest.io/domain: pms
+spec:
+  replicas: 2
+  selector: { matchLabels: { app.kubernetes.io/name: room-service } }
+  template:
+    metadata:
+      labels: { app.kubernetes.io/name: room-service, staynest.io/domain: pms }
+    spec:
+      serviceAccountName: room-service
+      securityContext: { runAsNonRoot: true, runAsUser: 1000, fsGroup: 1000 }
+      containers:
+        - name: room-service
+          image: harbor.staynest.internal/staynest/room-service:latest
+          ports: [{ containerPort: 50040, name: http }]
+          envFrom: [{ configMapRef: { name: room-service } }]
+          livenessProbe:  { httpGet: { path: /healthz, port: 50040 }, initialDelaySeconds: 15 }
+          readinessProbe: { httpGet: { path: /healthz, port: 50040 }, initialDelaySeconds: 5 }
+          resources:
+            requests: { cpu: 100m, memory: 128Mi }
+            limits:   { cpu: 1000m, memory: 512Mi }
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities: { drop: ["ALL"] }

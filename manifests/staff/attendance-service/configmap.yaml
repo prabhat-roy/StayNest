@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: attendance-service
+  namespace: staynest
+  labels: { app.kubernetes.io/name: attendance-service, staynest.io/domain: staff }
+data:
+  LOG_LEVEL: info
+  PORT: "50281"

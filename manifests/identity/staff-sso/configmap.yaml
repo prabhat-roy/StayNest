@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: staff-sso
+  namespace: staynest
+  labels: { app.kubernetes.io/name: staff-sso, staynest.io/domain: identity }
+data:
+  LOG_LEVEL: info
+  PORT: "50022"

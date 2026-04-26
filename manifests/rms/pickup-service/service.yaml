@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: pickup-service
+  namespace: staynest
+  labels: { app.kubernetes.io/name: pickup-service, staynest.io/domain: rms }
+spec:
+  type: ClusterIP
+  ports: [{ name: http, port: 50082, targetPort: 50082 }]
+  selector: { app.kubernetes.io/name: pickup-service }

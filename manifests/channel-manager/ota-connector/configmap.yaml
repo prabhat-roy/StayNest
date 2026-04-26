@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ota-connector
+  namespace: staynest
+  labels: { app.kubernetes.io/name: ota-connector, staynest.io/domain: channel-manager }
+data:
+  LOG_LEVEL: info
+  PORT: "50100"

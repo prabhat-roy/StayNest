@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: lost-service
+  namespace: staynest
+  labels: { app.kubernetes.io/name: lost-service, staynest.io/domain: housekeeping }
+data:
+  LOG_LEVEL: info
+  PORT: "50143"

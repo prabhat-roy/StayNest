@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: retail-service
+  namespace: staynest
+  labels: { app.kubernetes.io/name: retail-service, staynest.io/domain: spa }
+data:
+  LOG_LEVEL: info
+  PORT: "50183"

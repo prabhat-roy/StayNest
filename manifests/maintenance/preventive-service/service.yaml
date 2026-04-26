@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: preventive-service
+  namespace: staynest
+  labels: { app.kubernetes.io/name: preventive-service, staynest.io/domain: maintenance }
+spec:
+  type: ClusterIP
+  ports: [{ name: http, port: 50302, targetPort: 50302 }]
+  selector: { app.kubernetes.io/name: preventive-service }

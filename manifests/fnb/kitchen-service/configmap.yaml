@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kitchen-service
+  namespace: staynest
+  labels: { app.kubernetes.io/name: kitchen-service, staynest.io/domain: fnb }
+data:
+  LOG_LEVEL: info
+  PORT: "50163"

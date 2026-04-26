@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: catering-service
+  namespace: staynest
+  labels: { app.kubernetes.io/name: catering-service, staynest.io/domain: event }
+data:
+  LOG_LEVEL: info
+  PORT: "50202"
