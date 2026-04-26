@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package staynest.fnb.v1;
+
+import "common/types.proto";
+import "google/protobuf/timestamp.proto";
+
+option java_package = "com.staynest.fnb.v1";
+option java_multiple_files = true;
+
+// pos-service: POS integration bridge — gRPC to on-premise POS terminals.
+service PosService {
+  rpc Health(HealthRequest) returns (HealthResponse);
+}
+
+message HealthRequest {}
+message HealthResponse {
+  string status = 1;
+  string version = 2;
+  google.protobuf.Timestamp checked_at = 3;
+}

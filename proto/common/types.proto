@@ -1,0 +1,147 @@
+syntax = "proto3";
+
+package staynest.common.v1;
+
+import "google/protobuf/timestamp.proto";
+
+option java_package = "com.staynest.common.v1";
+option java_multiple_files = true;
+
+// PropertyId — a hotel/resort/property identifier (multi-property tenant scoping).
+message PropertyId {
+  string id = 1;
+}
+
+// GuestId — a guest reference (PII tokenised; raw lookup requires Vault access).
+message GuestId {
+  string token = 1;
+}
+
+// RoomId — a room within a property.
+message RoomId {
+  string property_id = 1;
+  string room_number = 2;
+}
+
+// ReservationId — a reservation reference.
+message ReservationId {
+  string property_id = 1;
+  string confirmation_number = 2;
+}
+
+// FolioId — a guest folio reference.
+message FolioId {
+  string property_id = 1;
+  string folio_number = 2;
+}
+
+// Address — a postal address.
+message Address {
+  string line1 = 1;
+  string line2 = 2;
+  string city = 3;
+  string state = 4;
+  string country_code = 5;  // ISO 3166-1 alpha-2
+  string postal_code = 6;
+  GeoPoint geo = 7;
+}
+
+// GeoPoint — WGS84 lat/long.
+message GeoPoint {
+  double lat = 1;
+  double lng = 2;
+}
+
+// Money — fixed-point monetary amount in minor units.
+// Multi-currency conversions MUST persist the rate used (see currency-service).
+message Money {
+  string currency_code = 1;  // ISO 4217 (e.g. "USD", "EUR", "INR")
+  int64 minor_units = 2;     // e.g. 12345 = 123.45
+}
+
+// CurrencyConversion — rate captured at transaction time. Required by OPA policy
+// `multi-currency-conversion-rate-required.rego` for any cross-currency transaction.
+message CurrencyConversion {
+  string from_currency = 1;
+  string to_currency = 2;
+  string rate = 3;                // decimal as string for precision
+  google.protobuf.Timestamp captured_at = 4;
+  string source = 5;              // "ECB" | "OANDA" | "internal"
+}
+
+// DateRange — inclusive [start, end].
+message DateRange {
+  string start_date = 1;  // YYYY-MM-DD
+  string end_date = 2;    // YYYY-MM-DD
+}
+
+// Pagination — request side.
+message PageRequest {
+  int32 size = 1;
+  string page_token = 2;
+}
+
+// Pagination — response side.
+message PageResponse {
+  string next_page_token = 1;
+  int64 total_size = 2;
+}
+
+// AuditMetadata — captured on every privileged write.
+message AuditMetadata {
+  string actor_id = 1;
+  string actor_role = 2;
+  string property_id = 3;
+  string ip_address = 4;
+  string user_agent = 5;
+  google.protobuf.Timestamp event_time = 6;
+}
+
+// PaymentToken — PCI-DSS scope minimisation: card data NEVER stored, only token.
+// OPA policy `pci-dss-card-tokenisation.rego` rejects any payload carrying raw PAN.
+message PaymentToken {
+  string token = 1;
+  string gateway = 2;       // "stripe" | "adyen" | "worldpay" | "authnet"
+  string last_four = 3;
+  string brand = 4;         // "VISA" | "MC" | "AMEX"
+  string expiry_yyyymm = 5;
+}
+
+// Channel — distribution channel reference.
+enum Channel {
+  CHANNEL_UNSPECIFIED = 0;
+  CHANNEL_DIRECT = 1;
+  CHANNEL_BOOKING_COM = 2;
+  CHANNEL_EXPEDIA = 3;
+  CHANNEL_AIRBNB = 4;
+  CHANNEL_AGODA = 5;
+  CHANNEL_GDS_AMADEUS = 6;
+  CHANNEL_GDS_SABRE = 7;
+  CHANNEL_GDS_TRAVELPORT = 8;
+  CHANNEL_CORPORATE = 9;
+  CHANNEL_GROUP = 10;
+  CHANNEL_WALK_IN = 11;
+}
+
+// ReservationStatus — lifecycle states.
+enum ReservationStatus {
+  RESERVATION_STATUS_UNSPECIFIED = 0;
+  RESERVATION_STATUS_TENTATIVE = 1;
+  RESERVATION_STATUS_CONFIRMED = 2;
+  RESERVATION_STATUS_CHECKED_IN = 3;
+  RESERVATION_STATUS_CHECKED_OUT = 4;
+  RESERVATION_STATUS_CANCELLED = 5;
+  RESERVATION_STATUS_NO_SHOW = 6;
+}
+
+// RoomStatus — housekeeping status.
+enum RoomStatus {
+  ROOM_STATUS_UNSPECIFIED = 0;
+  ROOM_STATUS_VACANT_CLEAN = 1;
+  ROOM_STATUS_VACANT_DIRTY = 2;
+  ROOM_STATUS_OCCUPIED_CLEAN = 3;
+  ROOM_STATUS_OCCUPIED_DIRTY = 4;
+  ROOM_STATUS_OUT_OF_ORDER = 5;
+  ROOM_STATUS_OUT_OF_SERVICE = 6;
+  ROOM_STATUS_INSPECTED = 7;
+}

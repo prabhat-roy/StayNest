@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package staynest.inventory_locking.v1;
+
+import "common/types.proto";
+import "google/protobuf/timestamp.proto";
+
+option java_package = "com.staynest.inventorylocking.v1";
+option java_multiple_files = true;
+
+// inventory-lock-service: Real-time inventory locking under booking spikes (Rust + Redlock).
+// Atomic compare-and-swap on (property_id, room_type, stay_date) — overbooking is impossible.
+service InventoryLockService {
+  rpc Health(HealthRequest) returns (HealthResponse);
+}
+
+message HealthRequest {}
+message HealthResponse {
+  string status = 1;
+  string version = 2;
+  google.protobuf.Timestamp checked_at = 3;
+}
