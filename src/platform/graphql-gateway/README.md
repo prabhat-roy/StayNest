@@ -1,8 +1,8 @@
-# graphql-gateway
+﻿# graphql-gateway
 
 GraphQL federation across 17 hospitality domains.
 
-**Domain:** `platform` · **Language:** go · **Port:** 50005
+Domain: `platform` Â· Language: go Â· Port: 50005
 
 ## Run locally
 

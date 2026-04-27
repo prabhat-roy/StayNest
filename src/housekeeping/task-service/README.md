@@ -1,8 +1,8 @@
-# task-service
+﻿# task-service
 
-Service in the **housekeeping** domain of StayNest.
+Service in the housekeeping domain of StayNest.
 
-**Language:** Go · **Port:** 50140
+Language: Go Â· Port: 50140
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/task-service/](../../../helm/charts/task-service/) — Helm chart
-- [manifests/housekeeping/task-service/](../../../manifests/housekeeping/task-service/) — Raw K8s manifests
+- [helm/charts/task-service/](../../../helm/charts/task-service/) â€” Helm chart
+- [manifests/housekeeping/task-service/](../../../manifests/housekeeping/task-service/) â€” Raw K8s manifests

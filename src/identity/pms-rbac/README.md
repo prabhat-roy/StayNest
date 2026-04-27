@@ -1,8 +1,8 @@
-# pms-rbac
+﻿# pms-rbac
 
-Service in the **identity** domain of StayNest.
+Service in the identity domain of StayNest.
 
-**Language:** Go · **Port:** 50024
+Language: Go Â· Port: 50024
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/pms-rbac/](../../../helm/charts/pms-rbac/) — Helm chart
-- [manifests/identity/pms-rbac/](../../../manifests/identity/pms-rbac/) — Raw K8s manifests
+- [helm/charts/pms-rbac/](../../../helm/charts/pms-rbac/) â€” Helm chart
+- [manifests/identity/pms-rbac/](../../../manifests/identity/pms-rbac/) â€” Raw K8s manifests

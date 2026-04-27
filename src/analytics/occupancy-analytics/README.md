@@ -1,8 +1,8 @@
-# occupancy-analytics
+﻿# occupancy-analytics
 
-Service in the **analytics** domain of StayNest.
+Service in the analytics domain of StayNest.
 
-**Language:** Go · **Port:** 50321
+Language: Go Â· Port: 50321
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/occupancy-analytics/](../../../helm/charts/occupancy-analytics/) — Helm chart
-- [manifests/analytics/occupancy-analytics/](../../../manifests/analytics/occupancy-analytics/) — Raw K8s manifests
+- [helm/charts/occupancy-analytics/](../../../helm/charts/occupancy-analytics/) â€” Helm chart
+- [manifests/analytics/occupancy-analytics/](../../../manifests/analytics/occupancy-analytics/) â€” Raw K8s manifests

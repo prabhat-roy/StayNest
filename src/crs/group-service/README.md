@@ -1,8 +1,8 @@
-# group-service
+﻿# group-service
 
-Service in the **crs** domain of StayNest.
+Service in the crs domain of StayNest.
 
-**Language:** Go · **Port:** 50062
+Language: Go Â· Port: 50062
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/group-service/](../../../helm/charts/group-service/) — Helm chart
-- [manifests/crs/group-service/](../../../manifests/crs/group-service/) — Raw K8s manifests
+- [helm/charts/group-service/](../../../helm/charts/group-service/) â€” Helm chart
+- [manifests/crs/group-service/](../../../manifests/crs/group-service/) â€” Raw K8s manifests

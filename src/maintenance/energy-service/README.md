@@ -1,8 +1,8 @@
-# energy-service
+﻿# energy-service
 
-Service in the **maintenance** domain of StayNest.
+Service in the maintenance domain of StayNest.
 
-**Language:** Go · **Port:** 50303
+Language: Go Â· Port: 50303
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/energy-service/](../../../helm/charts/energy-service/) — Helm chart
-- [manifests/maintenance/energy-service/](../../../manifests/maintenance/energy-service/) — Raw K8s manifests
+- [helm/charts/energy-service/](../../../helm/charts/energy-service/) â€” Helm chart
+- [manifests/maintenance/energy-service/](../../../manifests/maintenance/energy-service/) â€” Raw K8s manifests

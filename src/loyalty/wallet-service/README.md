@@ -1,8 +1,8 @@
-# wallet-service
+﻿# wallet-service
 
-Service in the **loyalty** domain of StayNest.
+Service in the loyalty domain of StayNest.
 
-**Language:** Go · **Port:** 50223
+Language: Go Â· Port: 50223
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/wallet-service/](../../../helm/charts/wallet-service/) — Helm chart
-- [manifests/loyalty/wallet-service/](../../../manifests/loyalty/wallet-service/) — Raw K8s manifests
+- [helm/charts/wallet-service/](../../../helm/charts/wallet-service/) â€” Helm chart
+- [manifests/loyalty/wallet-service/](../../../manifests/loyalty/wallet-service/) â€” Raw K8s manifests

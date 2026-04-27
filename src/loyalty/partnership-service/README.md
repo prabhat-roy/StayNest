@@ -1,8 +1,8 @@
-# partnership-service
+﻿# partnership-service
 
-Service in the **loyalty** domain of StayNest.
+Service in the loyalty domain of StayNest.
 
-**Language:** Go · **Port:** 50222
+Language: Go Â· Port: 50222
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/partnership-service/](../../../helm/charts/partnership-service/) — Helm chart
-- [manifests/loyalty/partnership-service/](../../../manifests/loyalty/partnership-service/) — Raw K8s manifests
+- [helm/charts/partnership-service/](../../../helm/charts/partnership-service/) â€” Helm chart
+- [manifests/loyalty/partnership-service/](../../../manifests/loyalty/partnership-service/) â€” Raw K8s manifests

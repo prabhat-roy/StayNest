@@ -1,8 +1,8 @@
-# benchmark-service
+﻿# benchmark-service
 
-Service in the **analytics** domain of StayNest.
+Service in the analytics domain of StayNest.
 
-**Language:** Go · **Port:** 50323
+Language: Go Â· Port: 50323
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/benchmark-service/](../../../helm/charts/benchmark-service/) — Helm chart
-- [manifests/analytics/benchmark-service/](../../../manifests/analytics/benchmark-service/) — Raw K8s manifests
+- [helm/charts/benchmark-service/](../../../helm/charts/benchmark-service/) â€” Helm chart
+- [manifests/analytics/benchmark-service/](../../../manifests/analytics/benchmark-service/) â€” Raw K8s manifests

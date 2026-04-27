@@ -1,8 +1,8 @@
-# api-gateway
+﻿# api-gateway
 
 HTTP+gRPC ingress, OAuth2/mTLS, rate limit, multi-property routing.
 
-**Domain:** `platform` · **Language:** go · **Port:** 50000
+Domain: `platform` Â· Language: go Â· Port: 50000
 
 ## Run locally
 
@@ -12,11 +12,11 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
-- `GET /metrics` — Prometheus metrics
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
+- `GET /metrics` â€” Prometheus metrics
 
 ## See also
 
-- [proto/platform/api-gateway.proto](../../../proto/platform/api-gateway.proto) — gRPC contract
-- [helm/charts/api-gateway/](../../../helm/charts/api-gateway/) — Helm chart
-- [../README.md](../README.md) — domain overview
+- [proto/platform/api-gateway.proto](../../../proto/platform/api-gateway.proto) â€” gRPC contract
+- [helm/charts/api-gateway/](../../../helm/charts/api-gateway/) â€” Helm chart
+- [../README.md](../README.md) â€” domain overview

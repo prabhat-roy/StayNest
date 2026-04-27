@@ -1,8 +1,8 @@
-# retail-service
+﻿# retail-service
 
-Service in the **spa** domain of StayNest.
+Service in the spa domain of StayNest.
 
-**Language:** Go · **Port:** 50183
+Language: Go Â· Port: 50183
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/retail-service/](../../../helm/charts/retail-service/) — Helm chart
-- [manifests/spa/retail-service/](../../../manifests/spa/retail-service/) — Raw K8s manifests
+- [helm/charts/retail-service/](../../../helm/charts/retail-service/) â€” Helm chart
+- [manifests/spa/retail-service/](../../../manifests/spa/retail-service/) â€” Raw K8s manifests

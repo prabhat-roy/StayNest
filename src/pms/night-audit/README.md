@@ -1,8 +1,8 @@
-# night-audit
+﻿# night-audit
 
-Service in the **pms** domain of StayNest.
+Service in the pms domain of StayNest.
 
-**Language:** Go · **Port:** 50043
+Language: Go Â· Port: 50043
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/night-audit/](../../../helm/charts/night-audit/) — Helm chart
-- [manifests/pms/night-audit/](../../../manifests/pms/night-audit/) — Raw K8s manifests
+- [helm/charts/night-audit/](../../../helm/charts/night-audit/) â€” Helm chart
+- [manifests/pms/night-audit/](../../../manifests/pms/night-audit/) â€” Raw K8s manifests

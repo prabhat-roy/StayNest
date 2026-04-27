@@ -1,8 +1,8 @@
-# gds-service
+﻿# gds-service
 
-Service in the **channel-manager** domain of StayNest.
+Service in the channel-manager domain of StayNest.
 
-**Language:** Go · **Port:** 50101
+Language: Go Â· Port: 50101
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/gds-service/](../../../helm/charts/gds-service/) — Helm chart
-- [manifests/channel-manager/gds-service/](../../../manifests/channel-manager/gds-service/) — Raw K8s manifests
+- [helm/charts/gds-service/](../../../helm/charts/gds-service/) â€” Helm chart
+- [manifests/channel-manager/gds-service/](../../../manifests/channel-manager/gds-service/) â€” Raw K8s manifests

@@ -1,8 +1,8 @@
-# menu-service
+﻿# menu-service
 
-Service in the **fnb** domain of StayNest.
+Service in the fnb domain of StayNest.
 
-**Language:** Go · **Port:** 50161
+Language: Go Â· Port: 50161
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/menu-service/](../../../helm/charts/menu-service/) — Helm chart
-- [manifests/fnb/menu-service/](../../../manifests/fnb/menu-service/) — Raw K8s manifests
+- [helm/charts/menu-service/](../../../helm/charts/menu-service/) â€” Helm chart
+- [manifests/fnb/menu-service/](../../../manifests/fnb/menu-service/) â€” Raw K8s manifests

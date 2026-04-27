@@ -1,8 +1,8 @@
-# room-service
+﻿# room-service
 
-Service in the **pms** domain of StayNest.
+Service in the pms domain of StayNest.
 
-**Language:** Go · **Port:** 50040
+Language: Go Â· Port: 50040
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/room-service/](../../../helm/charts/room-service/) — Helm chart
-- [manifests/pms/room-service/](../../../manifests/pms/room-service/) — Raw K8s manifests
+- [helm/charts/room-service/](../../../helm/charts/room-service/) â€” Helm chart
+- [manifests/pms/room-service/](../../../manifests/pms/room-service/) â€” Raw K8s manifests

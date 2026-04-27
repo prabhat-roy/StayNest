@@ -1,8 +1,8 @@
-# billing-service
+﻿# billing-service
 
-Service in the **finance** domain of StayNest.
+Service in the finance domain of StayNest.
 
-**Language:** Go · **Port:** 50240
+Language: Go Â· Port: 50240
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/billing-service/](../../../helm/charts/billing-service/) — Helm chart
-- [manifests/finance/billing-service/](../../../manifests/finance/billing-service/) — Raw K8s manifests
+- [helm/charts/billing-service/](../../../helm/charts/billing-service/) â€” Helm chart
+- [manifests/finance/billing-service/](../../../manifests/finance/billing-service/) â€” Raw K8s manifests

@@ -1,8 +1,8 @@
-# booking-service
+﻿# booking-service
 
-Service in the **crs** domain of StayNest.
+Service in the crs domain of StayNest.
 
-**Language:** Go · **Port:** 50061
+Language: Go Â· Port: 50061
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/booking-service/](../../../helm/charts/booking-service/) — Helm chart
-- [manifests/crs/booking-service/](../../../manifests/crs/booking-service/) — Raw K8s manifests
+- [helm/charts/booking-service/](../../../helm/charts/booking-service/) â€” Helm chart
+- [manifests/crs/booking-service/](../../../manifests/crs/booking-service/) â€” Raw K8s manifests

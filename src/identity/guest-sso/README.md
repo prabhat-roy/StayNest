@@ -1,8 +1,8 @@
-# guest-sso
+﻿# guest-sso
 
-Service in the **identity** domain of StayNest.
+Service in the identity domain of StayNest.
 
-**Language:** Go · **Port:** 50021
+Language: Go Â· Port: 50021
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/guest-sso/](../../../helm/charts/guest-sso/) — Helm chart
-- [manifests/identity/guest-sso/](../../../manifests/identity/guest-sso/) — Raw K8s manifests
+- [helm/charts/guest-sso/](../../../helm/charts/guest-sso/) â€” Helm chart
+- [manifests/identity/guest-sso/](../../../manifests/identity/guest-sso/) â€” Raw K8s manifests

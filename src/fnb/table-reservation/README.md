@@ -1,8 +1,8 @@
-# table-reservation
+﻿# table-reservation
 
-Service in the **fnb** domain of StayNest.
+Service in the fnb domain of StayNest.
 
-**Language:** Go · **Port:** 50162
+Language: Go Â· Port: 50162
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/table-reservation/](../../../helm/charts/table-reservation/) — Helm chart
-- [manifests/fnb/table-reservation/](../../../manifests/fnb/table-reservation/) — Raw K8s manifests
+- [helm/charts/table-reservation/](../../../helm/charts/table-reservation/) â€” Helm chart
+- [manifests/fnb/table-reservation/](../../../manifests/fnb/table-reservation/) â€” Raw K8s manifests

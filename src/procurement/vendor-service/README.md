@@ -1,8 +1,8 @@
-# vendor-service
+﻿# vendor-service
 
-Service in the **procurement** domain of StayNest.
+Service in the procurement domain of StayNest.
 
-**Language:** Go · **Port:** 50261
+Language: Go Â· Port: 50261
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/vendor-service/](../../../helm/charts/vendor-service/) — Helm chart
-- [manifests/procurement/vendor-service/](../../../manifests/procurement/vendor-service/) — Raw K8s manifests
+- [helm/charts/vendor-service/](../../../helm/charts/vendor-service/) â€” Helm chart
+- [manifests/procurement/vendor-service/](../../../manifests/procurement/vendor-service/) â€” Raw K8s manifests

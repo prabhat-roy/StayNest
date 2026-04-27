@@ -1,8 +1,8 @@
-# redemption-service
+﻿# redemption-service
 
-Service in the **loyalty** domain of StayNest.
+Service in the loyalty domain of StayNest.
 
-**Language:** Go · **Port:** 50221
+Language: Go Â· Port: 50221
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/redemption-service/](../../../helm/charts/redemption-service/) — Helm chart
-- [manifests/loyalty/redemption-service/](../../../manifests/loyalty/redemption-service/) — Raw K8s manifests
+- [helm/charts/redemption-service/](../../../helm/charts/redemption-service/) â€” Helm chart
+- [manifests/loyalty/redemption-service/](../../../manifests/loyalty/redemption-service/) â€” Raw K8s manifests

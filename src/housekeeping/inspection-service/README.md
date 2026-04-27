@@ -1,8 +1,8 @@
-# inspection-service
+﻿# inspection-service
 
-Service in the **housekeeping** domain of StayNest.
+Service in the housekeeping domain of StayNest.
 
-**Language:** Go · **Port:** 50141
+Language: Go Â· Port: 50141
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/inspection-service/](../../../helm/charts/inspection-service/) — Helm chart
-- [manifests/housekeeping/inspection-service/](../../../manifests/housekeeping/inspection-service/) — Raw K8s manifests
+- [helm/charts/inspection-service/](../../../helm/charts/inspection-service/) â€” Helm chart
+- [manifests/housekeeping/inspection-service/](../../../manifests/housekeeping/inspection-service/) â€” Raw K8s manifests

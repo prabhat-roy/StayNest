@@ -1,8 +1,8 @@
-# lost-service
+﻿# lost-service
 
-Service in the **housekeeping** domain of StayNest.
+Service in the housekeeping domain of StayNest.
 
-**Language:** Go · **Port:** 50143
+Language: Go Â· Port: 50143
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/lost-service/](../../../helm/charts/lost-service/) — Helm chart
-- [manifests/housekeeping/lost-service/](../../../manifests/housekeeping/lost-service/) — Raw K8s manifests
+- [helm/charts/lost-service/](../../../helm/charts/lost-service/) â€” Helm chart
+- [manifests/housekeeping/lost-service/](../../../manifests/housekeeping/lost-service/) â€” Raw K8s manifests

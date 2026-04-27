@@ -1,8 +1,8 @@
-# work-order-service
+﻿# work-order-service
 
-Service in the **maintenance** domain of StayNest.
+Service in the maintenance domain of StayNest.
 
-**Language:** Go · **Port:** 50300
+Language: Go Â· Port: 50300
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/work-order-service/](../../../helm/charts/work-order-service/) — Helm chart
-- [manifests/maintenance/work-order-service/](../../../manifests/maintenance/work-order-service/) — Raw K8s manifests
+- [helm/charts/work-order-service/](../../../helm/charts/work-order-service/) â€” Helm chart
+- [manifests/maintenance/work-order-service/](../../../manifests/maintenance/work-order-service/) â€” Raw K8s manifests

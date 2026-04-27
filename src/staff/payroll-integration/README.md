@@ -1,8 +1,8 @@
-# payroll-integration
+﻿# payroll-integration
 
-Service in the **staff** domain of StayNest.
+Service in the staff domain of StayNest.
 
-**Language:** Go · **Port:** 50282
+Language: Go Â· Port: 50282
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/payroll-integration/](../../../helm/charts/payroll-integration/) — Helm chart
-- [manifests/staff/payroll-integration/](../../../manifests/staff/payroll-integration/) — Raw K8s manifests
+- [helm/charts/payroll-integration/](../../../helm/charts/payroll-integration/) â€” Helm chart
+- [manifests/staff/payroll-integration/](../../../manifests/staff/payroll-integration/) â€” Raw K8s manifests

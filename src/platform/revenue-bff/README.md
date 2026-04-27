@@ -1,8 +1,8 @@
-# revenue-bff
+﻿# revenue-bff
 
 BFF for the Angular revenue management workspace.
 
-**Domain:** `platform` · **Language:** go · **Port:** 50003
+Domain: `platform` Â· Language: go Â· Port: 50003
 
 ## Run locally
 

@@ -1,8 +1,8 @@
-# therapist-service
+﻿# therapist-service
 
-Service in the **spa** domain of StayNest.
+Service in the spa domain of StayNest.
 
-**Language:** Go · **Port:** 50181
+Language: Go Â· Port: 50181
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/therapist-service/](../../../helm/charts/therapist-service/) — Helm chart
-- [manifests/spa/therapist-service/](../../../manifests/spa/therapist-service/) — Raw K8s manifests
+- [helm/charts/therapist-service/](../../../helm/charts/therapist-service/) â€” Helm chart
+- [manifests/spa/therapist-service/](../../../manifests/spa/therapist-service/) â€” Raw K8s manifests

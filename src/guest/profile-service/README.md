@@ -1,8 +1,8 @@
-# profile-service
+﻿# profile-service
 
-Service in the **guest** domain of StayNest.
+Service in the guest domain of StayNest.
 
-**Language:** Go · **Port:** 50120
+Language: Go Â· Port: 50120
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/profile-service/](../../../helm/charts/profile-service/) — Helm chart
-- [manifests/guest/profile-service/](../../../manifests/guest/profile-service/) — Raw K8s manifests
+- [helm/charts/profile-service/](../../../helm/charts/profile-service/) â€” Helm chart
+- [manifests/guest/profile-service/](../../../manifests/guest/profile-service/) â€” Raw K8s manifests

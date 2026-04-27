@@ -1,8 +1,8 @@
-# commission-service
+﻿# commission-service
 
-Service in the **finance** domain of StayNest.
+Service in the finance domain of StayNest.
 
-**Language:** Go · **Port:** 50243
+Language: Go Â· Port: 50243
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/commission-service/](../../../helm/charts/commission-service/) — Helm chart
-- [manifests/finance/commission-service/](../../../manifests/finance/commission-service/) — Raw K8s manifests
+- [helm/charts/commission-service/](../../../helm/charts/commission-service/) â€” Helm chart
+- [manifests/finance/commission-service/](../../../manifests/finance/commission-service/) â€” Raw K8s manifests

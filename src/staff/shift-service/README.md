@@ -1,8 +1,8 @@
-# shift-service
+﻿# shift-service
 
-Service in the **staff** domain of StayNest.
+Service in the staff domain of StayNest.
 
-**Language:** Go · **Port:** 50280
+Language: Go Â· Port: 50280
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/shift-service/](../../../helm/charts/shift-service/) — Helm chart
-- [manifests/staff/shift-service/](../../../manifests/staff/shift-service/) — Raw K8s manifests
+- [helm/charts/shift-service/](../../../helm/charts/shift-service/) â€” Helm chart
+- [manifests/staff/shift-service/](../../../manifests/staff/shift-service/) â€” Raw K8s manifests

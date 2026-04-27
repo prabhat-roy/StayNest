@@ -1,4 +1,4 @@
-# Security — StayNest
+﻿# Security â€” StayNest
 
 | Tool | Purpose |
 |---|---|
@@ -14,10 +14,10 @@
 | Trivy + Syft | Vulnerability scanning + SBOM generation |
 
 ## Critical OPA policies (in `opa/policies/`)
-- `inventory-atomic-write.rego` — blocks any inventory write that lacks a Redlock token or SERIALIZABLE lock claim. **Prevents overbooking.**
-- `pci-dss-card-tokenisation.rego` — blocks any payload containing raw PAN; mandates payment-gateway tokens.
-- `multi-currency-conversion-rate-required.rego` — every monetary transaction must carry amount, currency, base-currency amount, conversion rate, and rate timestamp.
+- `inventory-atomic-write.rego` â€” blocks any inventory write that lacks a Redlock token or SERIALIZABLE lock claim. Prevents overbooking.
+- `pci-dss-card-tokenisation.rego` â€” blocks any payload containing raw PAN; mandates payment-gateway tokens.
+- `multi-currency-conversion-rate-required.rego` â€” every monetary transaction must carry amount, currency, base-currency amount, conversion rate, and rate timestamp.
 
 ## PII / PCI rules
-- Every Kafka payload carrying guest data uses tokenised guest references — no raw PII.
+- Every Kafka payload carrying guest data uses tokenised guest references â€” no raw PII.
 - Card data NEVER touches StayNest services - tokenised at payment gateway edge.

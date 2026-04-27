@@ -1,8 +1,8 @@
-# invoice-service
+﻿# invoice-service
 
-Service in the **finance** domain of StayNest.
+Service in the finance domain of StayNest.
 
-**Language:** Go · **Port:** 50242
+Language: Go Â· Port: 50242
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/invoice-service/](../../../helm/charts/invoice-service/) — Helm chart
-- [manifests/finance/invoice-service/](../../../manifests/finance/invoice-service/) — Raw K8s manifests
+- [helm/charts/invoice-service/](../../../helm/charts/invoice-service/) â€” Helm chart
+- [manifests/finance/invoice-service/](../../../manifests/finance/invoice-service/) â€” Raw K8s manifests

@@ -1,8 +1,8 @@
-# revenue-analytics
+﻿# revenue-analytics
 
-Service in the **analytics** domain of StayNest.
+Service in the analytics domain of StayNest.
 
-**Language:** Go · **Port:** 50320
+Language: Go Â· Port: 50320
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/revenue-analytics/](../../../helm/charts/revenue-analytics/) — Helm chart
-- [manifests/analytics/revenue-analytics/](../../../manifests/analytics/revenue-analytics/) — Raw K8s manifests
+- [helm/charts/revenue-analytics/](../../../helm/charts/revenue-analytics/) â€” Helm chart
+- [manifests/analytics/revenue-analytics/](../../../manifests/analytics/revenue-analytics/) â€” Raw K8s manifests

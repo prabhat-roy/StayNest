@@ -1,8 +1,8 @@
-# chat-service
+﻿# chat-service
 
-Service in the **guest** domain of StayNest.
+Service in the guest domain of StayNest.
 
-**Language:** Go · **Port:** 50123
+Language: Go Â· Port: 50123
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/chat-service/](../../../helm/charts/chat-service/) — Helm chart
-- [manifests/guest/chat-service/](../../../manifests/guest/chat-service/) — Raw K8s manifests
+- [helm/charts/chat-service/](../../../helm/charts/chat-service/) â€” Helm chart
+- [manifests/guest/chat-service/](../../../manifests/guest/chat-service/) â€” Raw K8s manifests

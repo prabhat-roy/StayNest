@@ -1,8 +1,8 @@
-# tier-service
+﻿# tier-service
 
-Service in the **loyalty** domain of StayNest.
+Service in the loyalty domain of StayNest.
 
-**Language:** Go · **Port:** 50220
+Language: Go Â· Port: 50220
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/tier-service/](../../../helm/charts/tier-service/) — Helm chart
-- [manifests/loyalty/tier-service/](../../../manifests/loyalty/tier-service/) — Raw K8s manifests
+- [helm/charts/tier-service/](../../../helm/charts/tier-service/) â€” Helm chart
+- [manifests/loyalty/tier-service/](../../../manifests/loyalty/tier-service/) â€” Raw K8s manifests

@@ -1,4 +1,4 @@
-# AI_PLAN.md — StayNest (Hospitality & Property Management Platform)
+﻿# AI_PLAN.md â€” StayNest (Hospitality & Property Management Platform)
 
 > Hierarchical AI/ML strategy. Reuses the Paperclip / OpenClaw / NemoClaw
 > agent platform first defined in [ShopOS/AI.md](../ShopOS/AI.md). This file
@@ -11,14 +11,14 @@
 Hospitality runs on demand prediction, dynamic pricing, and conversational
 guest service in many languages. AI is the leverage point for:
 
-- **Demand + pickup forecasting** at room-night granularity.
-- **Dynamic pricing / yield management** that reacts to OTA + comp-set
+- Demand + pickup forecasting at room-night granularity.
+- Dynamic pricing / yield management that reacts to OTA + comp-set
   signals in minutes.
-- **Multilingual conversational concierge** — pre-arrival, on-property, and
+- Multilingual conversational concierge â€” pre-arrival, on-property, and
   post-stay.
-- **OTA review summarisation** for ops and revenue management.
-- **No-show + cancellation prediction** to drive overbooking risk safely.
-- **Room-allocation optimisation** under upgrade/upsell constraints.
+- OTA review summarisation for ops and revenue management.
+- No-show + cancellation prediction to drive overbooking risk safely.
+- Room-allocation optimisation under upgrade/upsell constraints.
 
 PCI-DSS for payments and GDPR for guest data are the binding constraints.
 
@@ -45,14 +45,14 @@ PCI-DSS for payments and GDPR for guest data are the binding constraints.
 
 ## 3. Hierarchical Agent Architecture
 
-Reuses **OpenClaw** / **Paperclip** / **NemoClaw** from `ShopOS/AI.md`.
+Reuses OpenClaw / Paperclip / NemoClaw from `ShopOS/AI.md`.
 
-### Tier 0 — Master Architect Agent
+### Tier 0 â€” Master Architect Agent
 
-`stay-architect` — researches AI tooling, proposes services, on-boards
+`stay-architect` â€” researches AI tooling, proposes services, on-boards
 Tier-1 leads, weekly written report. Read-only on prod.
 
-### Tier 1 — Division Leads (5)
+### Tier 1 â€” Division Leads (5)
 
 | Agent | Scope |
 |-------|-------|
@@ -62,21 +62,21 @@ Tier-1 leads, weekly written report. Read-only on prod.
 | `stay-dataml-lead`     | Feature store, training, drift |
 | `stay-platform-lead`   | Cross-cutting (idempotency, saga, outbox) |
 
-### Tier 2 — Specialist Agents
+### Tier 2 â€” Specialist Agents
 
-**By language**: Go, Java, Kotlin, Python, Node, Rust, Elixir, TypeScript,
+By language: Go, Java, Kotlin, Python, Node, Rust, Elixir, TypeScript,
 Dart.
 
-**By tool**: PostgreSQL, MongoDB, Redis, Elasticsearch, Cassandra,
+By tool: PostgreSQL, MongoDB, Redis, Elasticsearch, Cassandra,
 TimescaleDB, Kafka, NATS, RabbitMQ, MQTT, Vault, Keycloak, OPA, Kyverno,
 Falco, Cilium, Istio, ArgoCD, Argo Workflows, Prometheus, Grafana, Loki,
 Jaeger, OpenTelemetry, MinIO, Trivy, Cosign, MapLibre, Strapi-CMS,
 Mautic, Pulsar, Druid, Camunda, OpenFGA, Wazuh.
 
-**By service** — one agent per microservice (~185). Owns README,
+By service â€” one agent per microservice (~185). Owns README,
 OpenAPI, tests, CHANGELOG, deps, /healthz.
 
-### Tier 3 — Ephemeral Workers
+### Tier 3 â€” Ephemeral Workers
 
 Spawned for retraining demand model post-major-event, generating multi-
 language concierge knowledge bases, building per-property pricing
@@ -84,8 +84,8 @@ playbooks.
 
 ### Lifecycle
 
-Research → Document → Implement → Test → Review → Deploy → Monitor →
-Respond → Upgrade → Report. Plus an **overbooking-safety gate**:
+Research â†’ Document â†’ Implement â†’ Test â†’ Review â†’ Deploy â†’ Monitor â†’
+Respond â†’ Upgrade â†’ Report. Plus an overbooking-safety gate:
 no-show prediction can never bypass distributed lock / DB constraint
 that prevents real overbooking.
 
@@ -95,19 +95,19 @@ that prevents real overbooking.
 
 ```
 ai-platform/
-├── cluster: stay-ai-{aws,gcp,azure}      ← cloud GPU pool
-├── namespace: stay-ai-control             ← Paperclip
-├── namespace: stay-ai-agents              ← OpenClaw runtime
-├── namespace: stay-ai-sandbox             ← NemoClaw
-├── namespace: stay-ai-models              ← vLLM, Ollama, LiteLLM, Triton
-├── namespace: stay-ai-data                ← Qdrant, Weaviate, MinIO, MLflow
-├── namespace: stay-ai-obs                 ← Langfuse, Phoenix
-└── namespace: stay-ai-pipelines           ← Argo Workflows
+â”œâ”€â”€ cluster: stay-ai-{aws,gcp,azure}      â† cloud GPU pool
+â”œâ”€â”€ namespace: stay-ai-control             â† Paperclip
+â”œâ”€â”€ namespace: stay-ai-agents              â† OpenClaw runtime
+â”œâ”€â”€ namespace: stay-ai-sandbox             â† NemoClaw
+â”œâ”€â”€ namespace: stay-ai-models              â† vLLM, Ollama, LiteLLM, Triton
+â”œâ”€â”€ namespace: stay-ai-data                â† Qdrant, Weaviate, MinIO, MLflow
+â”œâ”€â”€ namespace: stay-ai-obs                 â† Langfuse, Phoenix
+â””â”€â”€ namespace: stay-ai-pipelines           â† Argo Workflows
 ```
 
 ### Hardware
 
-- **Cloud**: A100 for forecasting + LLM fine-tunes; A10G/L4 for inference.
+- Cloud: A100 for forecasting + LLM fine-tunes; A10G/L4 for inference.
 
 ### Software stack
 
@@ -131,7 +131,7 @@ Standard self-hosted set + multilingual voice stack (Whisper + Coqui TTS).
 | Tourism reporting (city tax, occupancy) | Outputs reconciled against authoritative DB before submission |
 | Rate-parity (OTA contract) | Pricing AI hard-bounded by parity rules; humans approve floor / ceiling |
 | Concierge honesty | NemoClaw blocks invented amenities; RAG-only on property data |
-| Overbooking | AI predictions advisory only — atomic inventory locks remain authoritative |
+| Overbooking | AI predictions advisory only â€” atomic inventory locks remain authoritative |
 
 ---
 
@@ -143,7 +143,7 @@ Standard self-hosted set + multilingual voice stack (Whisper + Coqui TTS).
 | 2 | Paperclip + NemoClaw; Tier-0 architect live |
 | 3 | Tier-1 leads; demand forecast v0 shadow |
 | 4 | Per-language / per-tool Tier-2 agents |
-| 5 | Per-service Tier-2 agents (rms → crs → guest first) |
+| 5 | Per-service Tier-2 agents (rms â†’ crs â†’ guest first) |
 | 6 | Concierge chatbot v1 in 6 langs |
 | 7 | Dynamic pricing v1 in 1 brand cluster |
 | 8 | Voice front-desk pilot; multi-cloud failover drill |
@@ -152,8 +152,8 @@ Standard self-hosted set + multilingual voice stack (Whisper + Coqui TTS).
 
 ## 7. Cost Envelope (target)
 
-- **Cloud infra**: $4,000 – $6,500 / month per primary cloud
-- **No** subscription LLM spend
+- Cloud infra: $4,000 â€“ $6,500 / month per primary cloud
+- No subscription LLM spend
 
 ---
 

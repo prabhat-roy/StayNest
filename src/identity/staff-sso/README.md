@@ -1,8 +1,8 @@
-# staff-sso
+﻿# staff-sso
 
-Service in the **identity** domain of StayNest.
+Service in the identity domain of StayNest.
 
-**Language:** Go · **Port:** 50022
+Language: Go Â· Port: 50022
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/staff-sso/](../../../helm/charts/staff-sso/) — Helm chart
-- [manifests/identity/staff-sso/](../../../manifests/identity/staff-sso/) — Raw K8s manifests
+- [helm/charts/staff-sso/](../../../helm/charts/staff-sso/) â€” Helm chart
+- [manifests/identity/staff-sso/](../../../manifests/identity/staff-sso/) â€” Raw K8s manifests

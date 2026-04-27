@@ -1,17 +1,17 @@
-# Terraform — StayNest Multi-Cloud Infrastructure
+﻿# Terraform â€” StayNest Multi-Cloud Infrastructure
 
-Each cloud has a **complete, standalone** deployment path. A team can pick **AWS,
-GCP, or Azure** and bring up the entire StayNest platform on it without depending
+Each cloud has a complete, standalone deployment path. A team can pick AWS,
+GCP, or Azure and bring up the entire StayNest platform on it without depending
 on the other clouds.
 
 ## Layout
 
 ```
 infra/terraform/
-├── aws/        ← AWS — VPC, EKS, RDS Postgres, ElastiCache, MSK Kafka, S3, KMS, Secrets Manager
-├── gcp/        ← GCP — VPC, GKE, Cloud SQL, Memorystore, Pub/Sub, GCS, KMS, Secret Manager
-├── azure/      ← Azure — VNet, AKS, Azure DB for PostgreSQL, Azure Cache, Event Hubs, Blob, Key Vault
-└── modules/    ← Cross-cloud shared modules (naming, tagging, OIDC discovery)
+â”œâ”€â”€ aws/        â† AWS â€” VPC, EKS, RDS Postgres, ElastiCache, MSK Kafka, S3, KMS, Secrets Manager
+â”œâ”€â”€ gcp/        â† GCP â€” VPC, GKE, Cloud SQL, Memorystore, Pub/Sub, GCS, KMS, Secret Manager
+â”œâ”€â”€ azure/      â† Azure â€” VNet, AKS, Azure DB for PostgreSQL, Azure Cache, Event Hubs, Blob, Key Vault
+â””â”€â”€ modules/    â† Cross-cloud shared modules (naming, tagging, OIDC discovery)
 ```
 
 Each cloud directory is a standalone Terraform root module. `terraform init && terraform apply`
@@ -33,8 +33,8 @@ in any of them brings up a full StayNest-ready cluster on that cloud.
 
 ## Independence guarantees
 
-- No remote-state sharing across clouds — each cloud has its own backend
-- No assumed global resource names — every resource is namespaced by cloud + env
+- No remote-state sharing across clouds â€” each cloud has its own backend
+- No assumed global resource names â€” every resource is namespaced by cloud + env
 - Helm values for a given cloud (`helm/charts/<service>/values-{aws,gcp,azure}.yaml`)
   reference only that cloud's primitives.
 

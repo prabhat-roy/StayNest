@@ -1,8 +1,8 @@
-# folio-service
+﻿# folio-service
 
-Service in the **pms** domain of StayNest.
+Service in the pms domain of StayNest.
 
-**Language:** Go · **Port:** 50042
+Language: Go Â· Port: 50042
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/folio-service/](../../../helm/charts/folio-service/) — Helm chart
-- [manifests/pms/folio-service/](../../../manifests/pms/folio-service/) — Raw K8s manifests
+- [helm/charts/folio-service/](../../../helm/charts/folio-service/) â€” Helm chart
+- [manifests/pms/folio-service/](../../../manifests/pms/folio-service/) â€” Raw K8s manifests

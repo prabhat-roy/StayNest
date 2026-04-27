@@ -1,8 +1,8 @@
-# catering-service
+﻿# catering-service
 
-Service in the **event** domain of StayNest.
+Service in the event domain of StayNest.
 
-**Language:** Go · **Port:** 50202
+Language: Go Â· Port: 50202
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/catering-service/](../../../helm/charts/catering-service/) — Helm chart
-- [manifests/event/catering-service/](../../../manifests/event/catering-service/) — Raw K8s manifests
+- [helm/charts/catering-service/](../../../helm/charts/catering-service/) â€” Helm chart
+- [manifests/event/catering-service/](../../../manifests/event/catering-service/) â€” Raw K8s manifests

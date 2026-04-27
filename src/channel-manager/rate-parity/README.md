@@ -1,8 +1,8 @@
-# rate-parity
+﻿# rate-parity
 
-Service in the **channel-manager** domain of StayNest.
+Service in the channel-manager domain of StayNest.
 
-**Language:** Go · **Port:** 50102
+Language: Go Â· Port: 50102
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/rate-parity/](../../../helm/charts/rate-parity/) — Helm chart
-- [manifests/channel-manager/rate-parity/](../../../manifests/channel-manager/rate-parity/) — Raw K8s manifests
+- [helm/charts/rate-parity/](../../../helm/charts/rate-parity/) â€” Helm chart
+- [manifests/channel-manager/rate-parity/](../../../manifests/channel-manager/rate-parity/) â€” Raw K8s manifests

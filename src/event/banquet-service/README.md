@@ -1,8 +1,8 @@
-# banquet-service
+﻿# banquet-service
 
-Service in the **event** domain of StayNest.
+Service in the event domain of StayNest.
 
-**Language:** Go · **Port:** 50200
+Language: Go Â· Port: 50200
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/banquet-service/](../../../helm/charts/banquet-service/) — Helm chart
-- [manifests/event/banquet-service/](../../../manifests/event/banquet-service/) — Raw K8s manifests
+- [helm/charts/banquet-service/](../../../helm/charts/banquet-service/) â€” Helm chart
+- [manifests/event/banquet-service/](../../../manifests/event/banquet-service/) â€” Raw K8s manifests
