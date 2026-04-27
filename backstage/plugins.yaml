@@ -1,0 +1,6 @@
+﻿plugins:
+  - { id: tech-radar, config: { url: https://github.com/prabhat-roy/StayNest/raw/main/backstage/tech-radar.json } }
+  - { id: lighthouse, config: { baseUrl: https://lhci.staynest.internal } }
+  - { id: opencost,   config: { baseUrl: https://opencost.staynest.internal } }
+  - { id: argocd,     config: { url: https://argocd.staynest.internal, token: "${ARGOCD_TOKEN}" } }
+  - { id: kubernetes, config: { clusters: [{ name: staynest-aws, url: https://eks.staynest.aws.internal }, { name: staynest-gcp, url: https://gke.staynest.gcp.internal }, { name: staynest-azure, url: https://aks.staynest.azure.internal }] } }

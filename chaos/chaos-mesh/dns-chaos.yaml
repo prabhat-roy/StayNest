@@ -1,0 +1,9 @@
+﻿apiVersion: chaos-mesh.org/v1alpha1
+kind: DNSChaos
+metadata: { name: staynest-dns-error, namespace: chaos-mesh }
+spec:
+  action: error
+  mode: all
+  patterns: ["*.staynest.svc.cluster.local"]
+  selector: { namespaces: [staynest] }
+  duration: 2m

@@ -1,0 +1,10 @@
+﻿apiVersion: flink.apache.org/v1beta1
+kind: FlinkSessionJob
+metadata: { name: staynest-aggregation, namespace: staynest }
+spec:
+  deploymentName: staynest-flink
+  job:
+    jarURI: s3://staynest-flink-jobs/aggregation.jar
+    parallelism: 8
+    upgradeMode: savepoint
+    args: ["--source-topic", "staynest.events.enriched", "--sink-topic", "staynest.metrics.aggregated", "--window", "5m"]

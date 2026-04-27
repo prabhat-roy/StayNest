@@ -1,0 +1,10 @@
+﻿apiVersion: flink.apache.org/v1beta1
+kind: FlinkSessionJob
+metadata: { name: staynest-anomaly-detection, namespace: staynest }
+spec:
+  deploymentName: staynest-flink
+  job:
+    jarURI: s3://staynest-flink-jobs/anomaly-detection.jar
+    parallelism: 6
+    upgradeMode: savepoint
+    args: ["--source-topic", "staynest.metrics.raw", "--sink-topic", "staynest.alerts.anomaly"]
